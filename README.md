@@ -1,158 +1,89 @@
-**Regression Project (Store Sales -- Time Series Forecasting)**
+# REGRESSION PROJECT - 
+## TIME SERIES MACHINE LEARNING - The Case of Corporation Favorita
 
-This is a time series forecasting problem. In this project, you'll
-predict store sales on data from Corporation Favorita, a large
-Ecuadorian-based grocery retailer.
+<a name="readme-top"></a>
 
-Specifically, you are to **build a model** that more accurately predicts
-the unit sales for thousands of items sold at different Favorita stores.
+<div align="center">
+  <br/>
 
-The training data includes dates, store, and product information,
-whether that item was being promoted, as well as the sales numbers.
-Additional files include supplementary information that may be useful in
-building your models
+  <h3><b>Time Series Analysis and Favorita Store sales prediction</b></h3>
 
-**File Descriptions and Data Field Information**
+</div>
 
-train.csv
+#  Table of Contents
 
--   The training data, comprising time series of features store_nbr, family, 
-    and onpromotion as well as the target sales.
+- [REGRESSION PROJECT - The Case of Favorita Stores]
+(REGRESSION-PROJECT---The-Case-of-Favorita-Stores-)
+- [ Table of Contents](#-table-of-contents)
+- [ \[Analyze and Predict Store Sales\] ](#-Analyze-and-Predict-Store-Sales-)
+    - [Summary ](#summary-)
+    - [ Project Description ](#-project-Description-)
+    - [Objectives of Project](#-objective-of-Project-)
+    - [Goal of Project](#-goal-of-Project-)
+    - [ Data ](#-data-)
+    - [ Hypothesis ](#-hypothesis-)
+        - [ Conclusion on hypothesis](#-conclusion-on-hypothesis-)
+    - [ Research Questions ](#-research-Questions-)
+    - [ Installation ](#-installation-)
+    - [ Author ](#-author-)
+    - [ License ](#-license-)
 
--   **store_nbr** identifies the store at which the products are sold.
 
--   **family** identifies the type of product sold.
+-  *Attached are articles to my project with more information.*
+## Summary
+| Article     | Links      | Description |
+|-----------|-------------|:-------------:|
+|Power BI| https://app.powerbi.com/view?r=eyJrIjoiMTE3MmM2MTctN2FhZi00MmI0LWE1NzktMzRkY2M4YWJiY2ZjIiwidCI6IjQ0ODdiNTJmLWYxMTgtNDgzMC1iNDlkLTNjMjk4Y2I3MTA3NSJ9 |  [Interactive dashboard](/) |
+|Medium   | |  [ Best article to gain machine-learning insights                        ](/) |
 
--   **sales** gives the total sales for a product family at a particular store
-    at a given date. Fractional values are possible since products can be sold in 
-    fractional units (1.5 kg of cheese, for instance, as opposed to 1 bag of chips).
 
--   **onpromotion** gives the total number of items in a product family that
-    were being promoted at a store at a given date.
+## Project Description <a name="project-description"></a>
+This project looks at regression models where a model is trained on a dataset in order to make predictions and forecast. The main goal of regression analysis is to underwstand how changes in the independent variables are associated with changes in the dependent variable. 
+Time Series machine learning also referred as time series forecasting is the application of machine learning techniques to analyze and predict time series data. Time series data consists of observations collected or recorded at successive points in time, making it essential in various fields. Machine learning models can be particularly useful in extracting patterns, making predictions, and uncovering insights from time series.  
 
-test.csv
+## Objectives of Project <a name="objectives-of-project"></a>
+1. Learn more about time series models and predict sales data for Corporation Favorita, a large Ecuadorian-based grocery retailer. 
 
--   The test data, having the same features as the training data. You will predict the target sales for the dates in this file.
+## Goal of Project <a name="goal-of-project"></a>
+Build a model that more accurately predicts the unit sales for thousands of items sold at different Favorita stores
 
--   The dates in the test data are for the 15 days after the last date in the training data.
+## Data <a name="data"></a>
+The datasets where extracted from three(3) places. 
 
-transaction.csv
+* First dataset - Three (3) tables(Crude oil prices, holiday events, and stores) were extracted from Microsoft SQL Server
+* Second dataset - Two (2) tables(sampel_submission, and test) were downloaded from OneDrive
+* Third dataset - Two(2) tables (train and transactions) were downloaded from a GitHub Repository
 
--   Contains date, store_nbr and transaction made on that specific date.
+## Hypothesis <a name="hypothesis"></a>
+* H_o: Promotions have no significant effect on product sales.
+* H_a: Promotions positively impact product sales, leading to increased sales during promotional periods
 
-sample_submission.csv
+### Conclusion on hypothesis <a name="conclusion-on-hypothesis"></a>
+We reject the null hypothesis and conclude that promotions has significant effect on sales
 
--   A sample submission file in the correct format.
+## Research Questions <a name="research-questions"></a>
+1. What is the effect of seasonal variations (e.g., Monthly, or quarterly patterns) on total sales?
 
-stores.csv
+2. What store is the highest performer in terms of sales?
 
--   Store metadata, including city, state, type, and cluster.
+3. What are the best-selling products per location?
 
--   cluster is a grouping of similar stores.
+4. Does store size affect total sales?
 
-oil.csv
+5. Which days have the most sales?
 
--   **Daily oil price** which includes values during both the train and
-     test data timeframes. (Ecuador is an oil-dependent country and its
-     economical health is highly vulnerable to shocks in oil prices.)
+## Installation: <a name="installation:"></a>
+* pyodbc  
+* python-dotenv
+* openpyxl
+* missingno
+* scikit-learn
+* pmdarima
+* statsmodels
 
-holidays_events.csv
+## Author <a name="author"></a>
 
--   Holidays and Events, with metadata
+Benjamin Kaitany
+- GitHub: 
+- LinkedIn: [Benjamin Kaitany](https://www.linkedin.com/in/benjamin-kaitany-5017681b2/)
 
-> **NOTE**: Pay special attention to the transferred column. A holiday
-> that is transferred officially falls on that calendar day but was
-> moved to another date by the government. A transferred day is more
-> like a normal day than a holiday. To find the day that it was
-> celebrated, look for the corresponding row where type is **Transfer**.
->
-> For example, the holiday Independencia de Guayaquil was transferred
-> from 2012-10-09 to 2012-10-12, which means it was celebrated on
-> 2012-10-12. Days that are type **Bridge** are extra days that are
-> added to a holiday (e.g., to extend the break across a long weekend).
-> These are frequently made up by the type **Work Day** which is a day
-> not normally scheduled for work (e.g., Saturday) that is meant to
-> payback the Bridge.
-
--   Additional holidays are days added a regular calendar holiday, for
-    example, as typically happens around Christmas (making Christmas
-    Eve a holiday).
-
-**Additional Notes**
-
--   Wages in the public sector are paid every two weeks on the 15th and
-    on the last day of the month. Supermarket sales could be affected
-    by this.
-
--   A magnitude 7.8 earthquake struck Ecuador on April 16, 2016. People
-    rallied in relief efforts donating water and other first need
-    products which greatly affected supermarket sales for several
-    weeks after the earthquake.
-
-**Data Preparation**
-
-**Hypothesis & Questions**
-
-The questions below are to be answered. Do note that, you are free to
-draw more hypothesis from the data.
-
-1.  Is the train dataset complete (has all the required dates)?
-
-2.  Which dates have the lowest and highest sales for each year?
-
-3.  Did the earthquake impact sales?
-
-4.  Are certain groups of stores selling more products? (Cluster, city,
-    state, type)
-
-5.  Are sales affected by promotions, oil prices and holidays?
-
-6.  What analysis can we get from the date and its extractable features?
-
-7.  What is the difference between RMSLE, RMSE, MSE (or why is the MAE
-    greater than all of them?)
-
-Your task is to **build a model** that more accurately predicts the unit
-sales for thousands of items.
-
-**Important**
-
--   Document process from data cleaning, analysis, assumptions, model
-    building etc. Marks will be awarded for documentation.
-
-**Rubric**
-
-**Documentation**:
-
--   Excellent: Having documentation on the project ie data cleaning,
-    analysis, hypothesis and model.
-
--   Good: Gave a summary on some of the processes
-
--   Fair: Gave a bullet list of the processes with short sentences
-
--   Poor: No documentation
-
-**Hypothesis Analysis &Visualization:**
-
--   Excellent: Validated the hypothesis and answered all questions
-    listed earlier with appropriate charts. Used relevant diagrams and
-    charts to show analysis/metrics.
-
--   Good: Validated at least 4 hypothesis and answered some of the
-    questions listed with appropriate charts. Used relevant diagrams but
-    might need some improvement and.
-
--   Fair: Lack of clarity on whether the hypothesis was true.
-
--   Poor: Not answered any of the hypothesis
-
-**Model Building:**
-
--   Excellent: Model has an RMSLE of 0.2
-
--   Good: Model has RMSLE of 0.3
-
--   Fair: Model has RMSLE of 0.4
-
--   Poor: Model has RMSLE of 0.4 +
