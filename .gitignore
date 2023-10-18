@@ -1,3 +1,6 @@
 /.env
-#lp3/
-#config.txt
+# Ignore untracked large files
+Datasets/final_clean_train.csv
+Datasets/merged_train_dataset_BI.csv
+Datasets/train.csv
+Datasets/train_dataset.csv

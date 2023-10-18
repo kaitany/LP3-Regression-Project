@@ -34,7 +34,7 @@
 | Article     | Links      | Description |
 |-----------|-------------|:-------------:|
 |Power BI| https://app.powerbi.com/view?r=eyJrIjoiMTE3MmM2MTctN2FhZi00MmI0LWE1NzktMzRkY2M4YWJiY2ZjIiwidCI6IjQ0ODdiNTJmLWYxMTgtNDgzMC1iNDlkLTNjMjk4Y2I3MTA3NSJ9 |  [Interactive dashboard](/) |
-|Medium   | |  [ Best article to gain machine-learning insights                        ](/) |
+|Medium   |https://medium.com/@benjaminkipkem/regression-project-predicting-store-sales-66acfbee6596 |  [ Best article to gain machine-learning insights                        ](/) |
 
 
 ## Project Description <a name="project-description"></a>
@@ -84,6 +84,6 @@ We reject the null hypothesis and conclude that promotions has significant effec
 ## Author <a name="author"></a>
 
 Benjamin Kaitany
-- GitHub: 
+- GitHub: https://github.com/kaitany/LP3-Regression-Project.git
 - LinkedIn: [Benjamin Kaitany](https://www.linkedin.com/in/benjamin-kaitany-5017681b2/)
 
